@@ -1,23 +1,41 @@
+"use client";
 import NavBar from "./navBar";
-import welcomePic from "../../styles/welcomePic.jpg";
 import Image from "next/image";
+import Tilt from "react-parallax-tilt";
+import PigButterfly from "./pigButterfly";
 
 const FrontPage = () => {
   return (
-    <div className="flex h-screen w-full bg-sky-200">
+    <div
+      style={{
+        backgroundImage: `url('/home-background.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="flex h-screen w-full flex-col"
+    >
       <NavBar />
-      <div className="flex flex-1 items-center justify-center">
-        <div className="w-3/4">
-          <h3 className="text-6xl">Bank on Us, Not on Runs</h3>
+      <div className="flex h-full w-full flex-row items-center justify-center ">
+        <div className="relative flex h-full flex-1 flex-col items-center justify-center">
+          <div className="w-3/4 text-7xl">
+            Bank on <span className="text-pink-400">Us</span>, Not on Runs...
+          </div>
+          <div className=" absolute bottom-0 right-0 w-72">
+            <PigButterfly />
+          </div>
         </div>
-      </div>
-      <div className="flex w-full flex-1 items-center justify-center">
-        <div className="flex h-3/4 w-3/4 items-center justify-center">
-          <Image
-            src={welcomePic}
-            alt="Welcome page pic"
-            className="w-3/5 rounded-3xl"
-          />
+        <div className="flex w-full flex-1 items-center justify-center">
+          <Tilt>
+            <div className="flex h-3/4 w-full items-center justify-center">
+              <Image
+                src="/welcomePic.jpg"
+                width={325}
+                height={325}
+                alt="Welcome page pic"
+                className="rounded-3xl"
+              />
+            </div>
+          </Tilt>
         </div>
       </div>
     </div>
