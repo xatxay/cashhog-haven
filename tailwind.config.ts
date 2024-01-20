@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-quando)", ...fontFamily.sans],
+        sans: ["var(--font-Moirai One)", ...fontFamily.sans],
       },
     },
   },

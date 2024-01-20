@@ -1,8 +1,9 @@
 "use client";
-import NavBar from "./navBar";
+import NavBar from "../_components/navBar";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-import PigButterfly from "./pigButterfly";
+import PigButterfly from "../_components/pigButterfly";
+import "../../styles/style.css";
 
 const FrontPage = () => {
   return (
@@ -12,13 +13,13 @@ const FrontPage = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="flex h-screen w-full flex-col"
+      className="background flex h-screen w-full flex-col"
     >
       <NavBar />
       <div className="flex h-full w-full flex-row items-center justify-center ">
         <div className="relative flex h-full flex-1 flex-col items-center justify-center">
-          <div className="w-3/4 text-7xl">
-            Bank on <span className="text-pink-400">Us</span>, Not on Runs...
+          <div className="w-4/5 text-8xl">
+            Bank on <span className="text-pink-400">Us</span>, Not on Runs
           </div>
           <div className=" absolute bottom-0 right-0 w-72">
             <PigButterfly />

@@ -1,16 +1,40 @@
+"use client";
 import "@/styles/globals.css";
-import FrontPage from "./_components/frontPage";
-import About from "./_components/About";
-import Gallery from "./_components/gallery";
-import Contact from "./_components/contact";
+import { useEffect, useState } from "react";
+import Loading from "./loading";
+import FrontPage from "./homepage/page";
+import About from "./about/page";
+import Gallery from "./gallery/page";
+import Contact from "./contact/page";
+import { motion } from "framer-motion";
+import ReadyPage from "./ready/page";
 
-export default async function Home() {
-  return (
-    <main>
-      <FrontPage />
-      <About />
-      <Gallery />
-      <Contact />
-    </main>
+export default function Home() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1 } }}
+      exit={{ opacity: 0, transition: { duration: 1 } }}
+    >
+      <main>
+        <FrontPage />
+        <About />
+        <ReadyPage />
+        <Gallery />
+        <Contact />
+      </main>
+    </motion.div>
   );
 }

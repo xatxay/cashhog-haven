@@ -1,5 +1,6 @@
 import Image from "next/image";
-// import cashHogLogo from "../../styles/logo.png";
+import "../../styles/style.css";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
@@ -11,10 +12,16 @@ const NavBar = () => {
         height={80}
         className="w-20"
       />
-      <h3 className="text-4xl font-extrabold text-pink-400">Cashhog Haven</h3>
-      <button className="box-border rounded border-none bg-pink-300 p-4 text-base">
+      <h3 className="text-border text-5xl font-extrabold text-black">
+        Cashhog Haven
+      </h3>
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="box-border rounded border-none bg-pink-300 p-4 text-base"
+      >
         Mint
-      </button>
+      </motion.button>
     </nav>
   );
 };

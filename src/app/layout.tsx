@@ -1,12 +1,11 @@
 import "@/styles/globals.css";
-
-import { Inter, Quando } from "next/font/google";
-
+import { Ubuntu } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 
-const inter = Inter({
+const inter = Ubuntu({
   subsets: ["latin"],
-  variable: "--font-quando",
+  variable: "--font-Ubuntu",
+  weight: "400",
 });
 
 export const metadata = {
@@ -22,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-quando ${inter.variable}`}>
+      <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

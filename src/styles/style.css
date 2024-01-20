@@ -1,7 +1,57 @@
 .text-border {
-  text-shadow:
-    -1px -1px 0 #000,
-    1px 1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  font-family: "Moirai One", system-ui;
+}
+
+.background {
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 221, 233, 1) 100%
+  );
+}
+
+.ready-background {
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 16%,
+    rgba(148, 185, 233, 1) 82%
+  );
+}
+
+.grid {
+  display: grid;
+  & > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .item0 {
+    transform: translate(0px, 0px);
+    z-index: 6;
+  }
+
+  .item1 {
+    transform: translate(30px, 0px);
+    z-index: 5;
+  }
+
+  .item2 {
+    transform: translate(60px, 0px);
+    z-index: 4;
+  }
+
+  .item3 {
+    transform: translate(90px, 0px);
+    z-index: 3;
+  }
+
+  .item4 {
+    transform: translate(120px, 0px);
+    z-index: 2;
+  }
+
+  .item5 {
+    transform: translate(150px, 0px);
+    z-index: 1;
+  }
 }

@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import ImageSlider from "../_components/dragSlide/dragSlider";
 
 const Gallery = () => {
   const pictures = [
@@ -11,18 +13,19 @@ const Gallery = () => {
   ];
   return (
     <div
-      style={{
-        backgroundImage: `url('/gallery-background.jpeg')`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-      className="h-screen w-full"
+      // style={{
+      //   backgroundImage: `url('/about-background.png')`,
+      //   backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      // }}
+      className="h-screen w-full border-t-2 border-t-black bg-gradient-to-b from-green-200 via-blue-300  to-pink-300"
     >
-      <div className="flex h-full w-full flex-row flex-wrap items-center justify-center gap-4">
+      {/* <div className="flex h-full w-full flex-row flex-wrap items-center justify-center gap-4">
         {pictures.map((pic) => {
           return <ImageCard pic={pic} key={pic} />;
         })}
-      </div>
+      </div> */}
+      <ImageSlider pictures={pictures} />
     </div>
   );
 };

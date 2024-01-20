@@ -1,23 +1,24 @@
 "use client";
-import PigStare from "./pigStare";
+import PigStare from "../_components/pigStare";
 import {
   FaTwitterSquare,
   FaYoutube,
   FaInstagram,
   FaDiscord,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <div
-      style={{
-        backgroundImage: `url("/home-image.png")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="flex h-screen w-full items-center justify-center"
+      // style={{
+      //   backgroundImage: `url("/home-image.png")`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
+      className="to flex h-screen w-full items-center justify-center border-t-2 border-t-black bg-sky-200 bg-gradient-to-b from-pink-300"
     >
-      <div className="flex h-4/5 w-4/5 items-center justify-center rounded-3xl bg-pink-300">
+      <div className="flex h-4/5 w-4/5 items-center justify-center rounded-3xl bg-gradient-to-r from-yellow-200 via-red-400 to-pink-400">
         <div className="flex h-full w-full flex-1 items-center justify-center ">
           <div className="flex h-4/5 w-4/5 flex-col items-center justify-center rounded-3xl border-2 border-black">
             <div className="flex h-full w-full flex-1 flex-col items-center justify-end rounded-t-3xl border-2 border-b-black bg-sky-200">
@@ -32,9 +33,13 @@ const Contact = () => {
               <span className="text-lg text-gray-700">
                 Inspire, Participate, and Create With Your Fellow Cashhogs.
               </span>
-              <button className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4">
+              <motion.button
+                className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 Mint
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -47,9 +52,13 @@ const Contact = () => {
               />
               <div className="box-border flex h-1/2 w-full items-center justify-between p-6">
                 <span>Signup for newsletter:</span>
-                <button className="box-border rounded-3xl bg-pink-300 p-5">
-                  Signup
-                </button>
+                <motion.button
+                  className="box-border rounded-3xl bg-pink-300 p-5"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Sign Up
+                </motion.button>
               </div>
             </div>
             <div className="box-border flex h-full w-full flex-1 flex-col items-center justify-center rounded-b-3xl px-8">
