@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import ImageSlider from "../_components/dragSlide/dragSlider";
+import StackImages from "../_components/dragSlide/dragSlider";
+import ImageSlider from "../_components/dragSlide/imageSlide";
 
 const Gallery = () => {
   const pictures = [
@@ -25,7 +26,8 @@ const Gallery = () => {
           return <ImageCard pic={pic} key={pic} />;
         })}
       </div> */}
-      <ImageSlider pictures={pictures} />
+      <StackImages pictures={pictures} />
+      {/* <ImageSlider pictures={pictures} /> */}
     </div>
   );
 };

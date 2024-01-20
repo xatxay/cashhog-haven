@@ -8,6 +8,7 @@ import Gallery from "./gallery/page";
 import Contact from "./contact/page";
 import { motion } from "framer-motion";
 import ReadyPage from "./ready/page";
+import ReadyVelocity from "./ready/readyVelocity";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -31,7 +32,8 @@ export default function Home() {
       <main>
         <FrontPage />
         <About />
-        <ReadyPage />
+        {/* <ReadyPage /> */}
+        <ReadyVelocity />
         <Gallery />
         <Contact />
       </main>

@@ -30,10 +30,12 @@ const FrontPage = () => {
             <div className="flex h-3/4 w-full items-center justify-center">
               <Image
                 src="/welcomePic.jpg"
+                priority
                 width={325}
                 height={325}
                 alt="Welcome page pic"
                 className="rounded-3xl"
+                quality={100}
               />
             </div>
           </Tilt>

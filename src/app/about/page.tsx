@@ -43,6 +43,8 @@ const About = () => {
             src="/cashhog_haven_banner.png"
             alt="cashhog banner"
             fill
+            sizes="100vw"
+            quality={100}
             className="z-20 rounded-3xl object-cover"
           />
         </div>
