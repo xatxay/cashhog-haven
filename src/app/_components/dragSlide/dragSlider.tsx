@@ -41,7 +41,7 @@ const StackImages = ({ pictures }: { pictures: string[] }) => {
     <div className="flex h-full w-full items-center justify-center">
       <motion.div className="flex min-w-full items-center justify-center overflow-x-hidden">
         <motion.div
-          className="grid min-w-max cursor-grab items-center justify-center "
+          className="grid-stack min-w-max cursor-grab items-center justify-center "
           ref={dragRef}
           drag="x"
           dragConstraints={{ right: 0, left: -1300 }}

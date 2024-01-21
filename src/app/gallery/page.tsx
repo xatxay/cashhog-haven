@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import StackImages from "../_components/dragSlide/dragSlider";
-import ImageSlider from "../_components/dragSlide/imageSlide";
+// import ImageSlider from "../_components/dragSlide/imageSlide";
 
 const Gallery = () => {
   const pictures = [
@@ -32,18 +32,18 @@ const Gallery = () => {
   );
 };
 
-const ImageCard = ({ pic }: { pic: string }) => {
-  return (
-    <div className="flex items-center justify-center rounded-3xl bg-black">
-      <Image
-        src={pic}
-        alt="first"
-        width={325}
-        height={325}
-        className="rounded-3xl"
-      />
-    </div>
-  );
-};
+// const ImageCard = ({ pic }: { pic: string }) => {
+//   return (
+//     <div className="flex items-center justify-center rounded-3xl bg-black">
+//       <Image
+//         src={pic}
+//         alt="first"
+//         width={325}
+//         height={325}
+//         className="rounded-3xl"
+//       />
+//     </div>
+//   );
+// };
 
 export default Gallery;

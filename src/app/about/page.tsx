@@ -17,9 +17,24 @@ const About = () => {
       className="flex h-screen w-full border-t-2 border-t-black bg-gradient-to-bl from-green-200 via-blue-300  to-pink-300"
     >
       <div className="relative flex h-full w-full flex-1 flex-col items-center justify-center">
-        <span className="text-border top-0 m-7 text-7xl font-bold text-black">
+        <motion.span
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 100,
+              restDelta: 0.001,
+            },
+          }}
+          className="text-border top-0 m-7 text-7xl font-bold text-black"
+        >
           Cashhog Haven
-        </span>
+        </motion.span>
         <span className="text-lg font-bold text-white">
           Enter a new universe of connected hogs community.
         </span>

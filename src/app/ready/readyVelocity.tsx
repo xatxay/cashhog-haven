@@ -120,7 +120,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function ReadyVelocity() {
   return (
-    <div className="background flex h-screen w-full items-center justify-center border-t-2 border-t-black text-white">
+    <div className="background flex h-screen w-full items-center justify-center overflow-x-hidden border-t-2 border-t-black text-white">
       <section>
         <ParallaxText baseVelocity={-4}>Are You Ready? 🐽</ParallaxText>
         <ParallaxText baseVelocity={4}>Buckle Up</ParallaxText>
