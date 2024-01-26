@@ -18,7 +18,7 @@ const ReadyVelocity = React.lazy(() => import("../ready/readyVelocity"));
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 const WholePage = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false); //change true
   const network = WalletAdapterNetwork.Mainnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const walletsList = useMemo(
@@ -51,10 +51,10 @@ const WholePage = () => {
             >
               <main>
                 <FrontPage />
-                <About />
+                {/* <About />
                 <ReadyVelocity />
                 <Gallery />
-                <Contact />
+                <Contact /> */}
               </main>
             </motion.div>
           </WalletModalProvider>

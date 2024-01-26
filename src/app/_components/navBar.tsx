@@ -1,8 +1,14 @@
 import Image from "next/image";
 import "../../styles/style.css";
 import ConnectWallet from "../connectWallet/connectWallet";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { useWalletDisconnectButton } from "@solana/wallet-adapter-base-ui";
 
 const NavBar = () => {
+  const wallet = useWallet();
+  const { setVisible } = useWalletModal();
+  const { onButtonClick } = useWalletDisconnectButton();
   return (
     <nav className="absolute m-auto flex w-full items-center justify-between py-4">
       <div className="flex flex-1 items-center justify-center">
@@ -20,7 +26,11 @@ const NavBar = () => {
         </h3>
       </div>
       <div className="flex flex-1 items-center justify-center">
-        <ConnectWallet />
+        <ConnectWallet
+          wallet={wallet}
+          setVisible={setVisible}
+          onButtonClick={onButtonClick}
+        />
       </div>
     </nav>
   );

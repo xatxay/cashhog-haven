@@ -9,6 +9,16 @@ const config = {
   // images: {
   //   disableStaticImages: true,
   // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "arweave.net",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default config;

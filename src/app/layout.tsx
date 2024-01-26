@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
-import { Ubuntu } from "next/font/google";
+import { Montserrat_Alternates } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
+//Montserrat Alternates
 
-const inter = Ubuntu({
+const inter = Montserrat_Alternates({
   subsets: ["latin"],
-  variable: "--font-Ubuntu",
+  variable: "--font-Montserrat-Alternates",
   weight: "400",
 });
 

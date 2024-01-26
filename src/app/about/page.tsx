@@ -60,7 +60,7 @@ const About = () => {
             fill
             sizes="100vw"
             quality={100}
-            className="z-20 rounded-3xl object-cover"
+            className="z-20 rounded-3xl border-2 border-black object-cover"
           />
         </div>
         <motion.div
@@ -70,7 +70,7 @@ const About = () => {
           variants={cardVariants}
         >
           <div className=" flex h-full w-full flex-row items-center justify-center gap-6">
-            <div className="flex h-full w-2/5 items-center justify-center rounded-3xl bg-gradient-to-bl from-green-400 via-blue-400  to-purple-500">
+            <div className="flex h-full w-2/5 items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-bl  from-green-400 via-blue-400 to-purple-500">
               <div className="m-3 box-border flex h-full flex-col gap-3 p-7">
                 <span className="text-base">Solana Network</span>
                 <span className="text-3xl font-bold text-white">
@@ -82,7 +82,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="relative flex h-full w-2/5 items-center justify-center rounded-3xl bg-gradient-to-br from-green-200 via-green-300  to-green-500">
+            <div className="relative flex h-full w-2/5 items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-br  from-green-200 via-green-300 to-green-500">
               <div className="m-3 box-border flex h-full flex-col gap-3 p-7">
                 <span className="text-base">Stake and earn reward</span>
                 <span className="text-3xl font-bold text-white">

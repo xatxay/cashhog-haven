@@ -79,3 +79,14 @@
   display: block;
   margin-right: 30px;
 }
+
+.tooltip {
+  @apply invisible absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible;
+}

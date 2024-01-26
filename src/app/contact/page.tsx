@@ -45,7 +45,7 @@ const Contact = () => {
         </div>
         <div className="flex h-full w-full flex-1 flex-col items-center justify-center">
           <div className="flex h-4/5 w-4/5 flex-col items-center justify-center rounded-3xl">
-            <div className="flex h-full w-full flex-1 flex-col items-center justify-end rounded-3xl bg-gray-300">
+            <div className="flex h-full w-full flex-1 flex-col items-center justify-end rounded-3xl border-2 border-black bg-gray-300">
               <input
                 className="box-border h-1/2 w-full rounded-t-3xl bg-gray-300 p-6 text-3xl focus:outline-none"
                 placeholder="Enter your email"
