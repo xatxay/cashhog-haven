@@ -7,9 +7,14 @@ import "../../styles/style.css";
 import { motion, AnimatePresence } from "framer-motion";
 import NftDrawer from "../_components/drawer";
 import { useState } from "react";
+import type { MetadataType } from "@/utils/interface";
 
 const FrontPage = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [metadata, setMetadata] = useState<MetadataType>({
+    name: "",
+    image: "",
+  });
 
   const openDrawerHandle = () => {
     if (openDrawer) return;
@@ -36,7 +41,7 @@ const FrontPage = () => {
         // }}
         className="background flex h-screen w-full flex-col bg-gray-500"
       >
-        <NavBar />
+        <NavBar setMetadata={setMetadata} openDrawerHandle={openDrawerHandle} />
         <div className="flex h-full w-full flex-row items-center justify-center ">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
             {/* <div className="w-4/5 text-8xl">
@@ -67,6 +72,7 @@ const FrontPage = () => {
               {openDrawer ? (
                 <NftDrawer
                   closeDrawerHandle={closeDrawerHandle}
+                  metadata={metadata}
                   key="nft drawer"
                 />
               ) : null}

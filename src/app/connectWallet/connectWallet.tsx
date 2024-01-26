@@ -2,41 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { type WalletContextState } from "@solana/wallet-adapter-react";
-// import { useWalletModal } from "@solana/wallet-adapter-react-ui";
-// import { useWalletDisconnectButton } from "@solana/wallet-adapter-base-ui";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { handleMint } from "./handleMint";
-// import {
-//   mintV2,
-//   mplCandyMachine,
-//   fetchCandyMachine,
-// } from "@metaplex-foundation/mpl-candy-machine";
-// import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
-// import { mplTokenMetadata } from "@metaplex-foundation/mpl-token-metadata";
-// import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
-// import {
-//   transactionBuilder,
-//   generateSigner,
-//   publicKey,
-//   some,
-// } from "@metaplex-foundation/umi";
-
-interface ConnectWalletProps {
-  wallet: WalletContextState;
-  setVisible: (open: boolean) => void;
-  onButtonClick: (() => void) | undefined;
-}
+import type { ConnectWalletProps } from "@/utils/interface";
 
 const ConnectWallet = ({
   wallet,
   setVisible,
   onButtonClick,
+  setMetadata,
+  openDrawerHandle,
 }: ConnectWalletProps) => {
-  // const wallet = useWallet();
-  // const { setVisible } = useWalletModal();
-  // const { onButtonClick } = useWalletDisconnectButton();
   const endpoint = "https://api.devnet.solana.com";
   const candyMachineId = "HdagLvP5zQLb8ksdwoC37kXgp5jJp8Wen5pbDmqkaFow";
 
@@ -79,7 +56,15 @@ const ConnectWallet = ({
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => handleMint(endpoint, wallet, candyMachineId)}
+        onClick={() =>
+          handleMint(
+            endpoint,
+            wallet,
+            candyMachineId,
+            setMetadata,
+            openDrawerHandle,
+          )
+        }
         className="box-border rounded border-none bg-pink-300 p-4 text-base"
       >
         Mint
