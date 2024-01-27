@@ -51,10 +51,10 @@ const WholePage = () => {
             >
               <main>
                 <FrontPage />
-                {/* <About />
+                <About />
                 <ReadyVelocity />
                 <Gallery />
-                <Contact /> */}
+                <Contact />
               </main>
             </motion.div>
           </WalletModalProvider>

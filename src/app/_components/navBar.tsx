@@ -6,7 +6,7 @@ import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { useWalletDisconnectButton } from "@solana/wallet-adapter-base-ui";
 import { type NavBarProps } from "@/utils/interface";
 
-const NavBar = ({ setMetadata, openDrawerHandle }: NavBarProps) => {
+const NavBar = ({ setSignature, umi }: NavBarProps) => {
   const wallet = useWallet();
   const { setVisible } = useWalletModal();
   const { onButtonClick } = useWalletDisconnectButton();
@@ -31,8 +31,8 @@ const NavBar = ({ setMetadata, openDrawerHandle }: NavBarProps) => {
           wallet={wallet}
           setVisible={setVisible}
           onButtonClick={onButtonClick}
-          setMetadata={setMetadata}
-          openDrawerHandle={openDrawerHandle}
+          setSignature={setSignature}
+          umi={umi}
         />
       </div>
     </nav>

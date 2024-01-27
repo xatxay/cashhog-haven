@@ -11,11 +11,10 @@ const ConnectWallet = ({
   wallet,
   setVisible,
   onButtonClick,
-  setMetadata,
-  openDrawerHandle,
+  setSignature,
+  umi,
 }: ConnectWalletProps) => {
-  const endpoint = "https://api.devnet.solana.com";
-  const candyMachineId = "HdagLvP5zQLb8ksdwoC37kXgp5jJp8Wen5pbDmqkaFow";
+  const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD";
 
   const onRequestConnectWallet = () => {
     setVisible(true);
@@ -56,15 +55,7 @@ const ConnectWallet = ({
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() =>
-          handleMint(
-            endpoint,
-            wallet,
-            candyMachineId,
-            setMetadata,
-            openDrawerHandle,
-          )
-        }
+        onClick={() => handleMint(umi, wallet, candyMachineId, setSignature)}
         className="box-border rounded border-none bg-pink-300 p-4 text-base"
       >
         Mint
