@@ -1,5 +1,5 @@
 "use client";
-import PigStare from "../_components/pigStare";
+import PigStare from "../pigStare";
 import {
   FaTwitterSquare,
   FaYoutube,

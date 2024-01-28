@@ -4,7 +4,7 @@ import CountDown from "./countDown";
 import { useEffect, useState } from "react";
 import DisplayNft from "./displayNft";
 import useGetMetadata from "../hooks/getMetadata";
-import { useUmi } from "../connectWallet/umiProvider";
+import { useUmi } from "./connectWallet/umiProvider";
 
 const NftDrawer = ({ closeDrawerHandle, signature }: DrawerProps) => {
   const [countDownFinished, setCountDownFinished] = useState<boolean>(false);

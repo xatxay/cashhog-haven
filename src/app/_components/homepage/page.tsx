@@ -1,11 +1,11 @@
 "use client";
-import NavBar from "../_components/navBar";
+import NavBar from "../navBar";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-import PigButterfly from "../_components/pigButterfly";
-import "../../styles/style.css";
+import PigButterfly from "../pigButterfly";
+import "../../../styles/style.css";
 import { motion, AnimatePresence } from "framer-motion";
-import NftDrawer from "../_components/drawer";
+import NftDrawer from "../drawer";
 import { useCallback, useEffect, useState } from "react";
 import type { FrontPageProps } from "@/utils/interface";
 import { useUmi } from "../connectWallet/umiProvider";

@@ -5,7 +5,7 @@ export interface LetUserMintType {
   letUserMint: boolean | null;
 }
 
-export interface AboutProps extends LetUserMintType {
+export interface AboutPageProps extends LetUserMintType {
   setSignature: Dispatch<SetStateAction<Uint8Array | null>>;
 }
 

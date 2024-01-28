@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, useEffect, useMemo, useState } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 import { motion } from "framer-motion";
 import {
   ConnectionProvider,
@@ -11,7 +11,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
 import { UnsafeBurnerWalletAdapter } from "@solana/wallet-adapter-wallets";
 const FrontPage = React.lazy(() => import("../homepage/page"));
-const About = React.lazy(() => import("../about/page"));
+const AboutPage = React.lazy(() => import("../about/page"));
 const Gallery = React.lazy(() => import("../gallery/page"));
 const Contact = React.lazy(() => import("../contact/page"));
 const ReadyVelocity = React.lazy(() => import("../ready/readyVelocity"));
@@ -60,7 +60,7 @@ const WholePage = () => {
                     signature={signature}
                     setSignature={setSignature}
                   />
-                  <About
+                  <AboutPage
                     letUserMint={letUserMint}
                     setSignature={setSignature}
                   />

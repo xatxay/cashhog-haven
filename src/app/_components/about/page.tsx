@@ -1,15 +1,15 @@
 "use client";
-import HogSleeping from "../_components/hogSleeping";
-import PigCoins from "../_components/pigCoins";
+import HogSleeping from "../hogSleeping";
+import PigCoins from "../pigCoins";
 import Image from "next/image";
-import "../../styles/style.css";
+import "../../../styles/style.css";
 import { motion } from "framer-motion";
 import cardVariants from "./variant";
-import type { AboutProps } from "@/utils/interface";
+import type { AboutPageProps } from "@/utils/interface";
 import { handleMint } from "../connectWallet/handleMint";
 import { useUmi } from "../connectWallet/umiProvider";
 
-const About = ({ letUserMint, setSignature }: AboutProps) => {
+const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
   const umi = useUmi();
   const candyMachineId = String(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
   return (
@@ -118,4 +118,4 @@ const About = ({ letUserMint, setSignature }: AboutProps) => {
   );
 };
 
-export default About;
+export default AboutPage;

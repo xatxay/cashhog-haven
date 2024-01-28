@@ -1,6 +1,6 @@
-import getMintAddress from "../connectWallet/getMintAddress";
+import getMintAddress from "../_components/connectWallet/getMintAddress";
 import type { Umi } from "@metaplex-foundation/umi";
-import fetchUserNft from "../connectWallet/fetchNft";
+import fetchUserNft from "../_components/connectWallet/fetchNft";
 import { useEffect, useState } from "react";
 
 const useGetMetadata = (signature: Uint8Array, umi: Umi) => {

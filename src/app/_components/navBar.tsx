@@ -1,15 +1,11 @@
 import Image from "next/image";
 import "../../styles/style.css";
-import ConnectWallet from "../connectWallet/connectWallet";
+import ConnectWallet from "./connectWallet/connectWallet";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { useWalletDisconnectButton } from "@solana/wallet-adapter-base-ui";
 import { type NavBarProps } from "@/utils/interface";
 
-const NavBar = ({
-  setSignature,
-  letUserMint,
-  setLetUserMint,
-}: NavBarProps) => {
+const NavBar = ({ setSignature, letUserMint, setLetUserMint }: NavBarProps) => {
   const { setVisible } = useWalletModal();
   const { onButtonClick } = useWalletDisconnectButton();
   return (

@@ -1,6 +1,6 @@
 "use client";
 // import Image from "next/image";
-import StackImages from "../_components/dragSlide/dragSlider";
+import StackImages from "../dragSlide/dragSlider";
 // import ImageSlider from "../_components/dragSlide/imageSlide";
 
 const Gallery = () => {

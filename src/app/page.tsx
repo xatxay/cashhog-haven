@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import React from "react";
-import WholePage from "./wholepage/page";
+import WholePage from "./_components/wholepage/page";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
