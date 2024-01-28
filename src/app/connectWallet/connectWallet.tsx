@@ -1,25 +1,23 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { handleMint } from "./handleMint";
 import type { ConnectWalletProps } from "@/utils/interface";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import checkMintLimt from "./checkLimt";
+import { useUmi } from "./umiProvider";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 const ConnectWallet = ({
-  wallet,
   setVisible,
   onButtonClick,
   setSignature,
-  umi,
   letUserMint,
   setLetUserMint,
 }: ConnectWalletProps) => {
   const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD";
   const candyGuardId = `GzaaBidWLppNpxH7XvtFoqQDtiZF3johzdrw8qdAbvpG`;
+  const umi = useUmi();
+  const wallet = useWallet();
 
   const onRequestConnectWallet = () => {
     setVisible(true);
@@ -71,7 +69,7 @@ const ConnectWallet = ({
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => handleMint(umi, wallet, candyMachineId, setSignature)}
+          onClick={() => handleMint(umi, candyMachineId, setSignature)}
           className="box-border rounded border-none bg-pink-300 p-4 text-base"
         >
           Mint
@@ -81,7 +79,7 @@ const ConnectWallet = ({
           disabled
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => handleMint(umi, wallet, candyMachineId, setSignature)}
+          onClick={() => handleMint(umi, candyMachineId, setSignature)}
           className="box-border rounded border-none bg-pink-300 p-4 text-base"
         >
           Minted

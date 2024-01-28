@@ -7,10 +7,13 @@ import {
   FaDiscord,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import type { LetUserMintType } from "@/utils/interface";
+import type { ContactProps } from "@/utils/interface";
 import { handleMint } from "../connectWallet/handleMint";
+import { useUmi } from "../connectWallet/umiProvider";
 
-const Contact = ({ letUserMint }: LetUserMintType) => {
+const Contact = ({ letUserMint, setSignature }: ContactProps) => {
+  const umi = useUmi();
+  const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD"; //change
   return (
     <div
       // style={{
@@ -40,6 +43,7 @@ const Contact = ({ letUserMint }: LetUserMintType) => {
                   className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={() => handleMint(umi, candyMachineId, setSignature)}
                 >
                   Mint
                 </motion.button>

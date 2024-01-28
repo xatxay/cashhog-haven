@@ -7,19 +7,17 @@ import "../../styles/style.css";
 import { motion, AnimatePresence } from "framer-motion";
 import NftDrawer from "../_components/drawer";
 import { useCallback, useEffect, useState } from "react";
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
-import { mplTokenMetadata } from "@metaplex-foundation/mpl-token-metadata";
-import { mplCandyMachine } from "@metaplex-foundation/mpl-candy-machine";
 import type { FrontPageProps } from "@/utils/interface";
+import { useUmi } from "../connectWallet/umiProvider";
 
-const FrontPage = ({ letUserMint, setLetUserMint }: FrontPageProps) => {
-  const endpoint = "https://api.devnet.solana.com";
+const FrontPage = ({
+  letUserMint,
+  setLetUserMint,
+  signature,
+  setSignature,
+}: FrontPageProps) => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [signature, setSignature] = useState<Uint8Array | null>(null);
-
-  const umi = createUmi(endpoint)
-    .use(mplTokenMetadata())
-    .use(mplCandyMachine());
+  const umi = useUmi();
 
   useEffect(() => {
     console.log("testing umi: ", umi);
@@ -59,7 +57,6 @@ const FrontPage = ({ letUserMint, setLetUserMint }: FrontPageProps) => {
       >
         <NavBar
           setSignature={setSignature}
-          umi={umi}
           letUserMint={letUserMint}
           setLetUserMint={setLetUserMint}
         />
@@ -88,13 +85,13 @@ const FrontPage = ({ letUserMint, setLetUserMint }: FrontPageProps) => {
             </Tilt>
             {/* <button className="w-20 bg-slate-500" onClick={openDrawerHandle}>
               Open
-            </button> */}
+            </button> //test*/}
             <AnimatePresence>
               {openDrawer && signature ? (
                 <NftDrawer
                   closeDrawerHandle={closeDrawerHandle}
                   signature={signature}
-                  umi={umi}
+                  // umi={umi}
                   key="nft drawer"
                 />
               ) : null}

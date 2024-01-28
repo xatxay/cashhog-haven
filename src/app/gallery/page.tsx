@@ -32,18 +32,4 @@ const Gallery = () => {
   );
 };
 
-// const ImageCard = ({ pic }: { pic: string }) => {
-//   return (
-//     <div className="flex items-center justify-center rounded-3xl bg-black">
-//       <Image
-//         src={pic}
-//         alt="first"
-//         width={325}
-//         height={325}
-//         className="rounded-3xl"
-//       />
-//     </div>
-//   );
-// };
-
 export default Gallery;

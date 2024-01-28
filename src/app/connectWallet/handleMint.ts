@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import {
   mintV2,
   fetchCandyMachine,
-  fetchCandyGuard,
 } from "@metaplex-foundation/mpl-candy-machine";
-import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
 import {
   transactionBuilder,
   generateSigner,
@@ -13,26 +9,19 @@ import {
   some,
   type Umi,
 } from "@metaplex-foundation/umi";
-import { type WalletContextState } from "@solana/wallet-adapter-react";
 import { setComputeUnitLimit } from "@metaplex-foundation/mpl-toolbox";
 import { toast } from "react-toastify";
 import type { Dispatch, SetStateAction } from "react";
 
 export const handleMint = async (
   umi: Umi,
-  wallet: WalletContextState,
   candyMachineId: string,
   setSignature: Dispatch<SetStateAction<Uint8Array | null>>,
 ) => {
-  console.log("handle mint: ", umi);
-  const toastId = toast.loading("Minting...", { autoClose: 3000 });
+  const toastDelay = 3000;
+  const toastId = toast.loading("Minting...", { autoClose: toastDelay });
   const candyMachine = await fetchCandyMachine(umi, publicKey(candyMachineId));
-  // const candyGuard = await fetchCandyGuard(
-  //   umi,
-  //   publicKey(`GzaaBidWLppNpxH7XvtFoqQDtiZF3johzdrw8qdAbvpG`),
-  // );
   console.log("candy machine: ", candyMachine);
-  // console.log("candy guard: ", candyGuard);
   const nftMint = generateSigner(umi);
   console.log("nftMint: ", nftMint);
   const transaction = transactionBuilder()
@@ -69,7 +58,7 @@ export const handleMint = async (
       render: "Failed minting",
       type: "error",
       isLoading: false,
-      autoClose: 3000,
+      autoClose: toastDelay,
     });
   }
   console.log("mint response: ", mintResponse);
@@ -80,14 +69,14 @@ export const handleMint = async (
       render: "Mint Successful",
       type: "success",
       isLoading: false,
-      autoClose: 3000,
+      autoClose: toastDelay,
     });
   } else {
     toast.update(toastId, {
       render: "Failed minting",
       type: "error",
       isLoading: false,
-      autoClose: 3000,
+      autoClose: toastDelay,
     });
     console.error("Error minting...: ", mintResponse);
   }

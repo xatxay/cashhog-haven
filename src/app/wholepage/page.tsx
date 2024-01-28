@@ -16,10 +16,12 @@ const Gallery = React.lazy(() => import("../gallery/page"));
 const Contact = React.lazy(() => import("../contact/page"));
 const ReadyVelocity = React.lazy(() => import("../ready/readyVelocity"));
 import "@solana/wallet-adapter-react-ui/styles.css";
+import { UmiProvider } from "../connectWallet/umiProvider";
 
 const WholePage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false); //change true
   const [letUserMint, setLetUserMint] = useState<boolean | null>(true);
+  const [signature, setSignature] = useState<Uint8Array | null>(null);
   const network = WalletAdapterNetwork.Mainnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const walletsList = useMemo(
@@ -43,24 +45,34 @@ const WholePage = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={walletsList} autoConnect>
           <WalletModalProvider>
-            {/* <WalletMultiButton /> */}
-            {/* <WalletDisconnectButton /> */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 1 } }}
-              exit={{ opacity: 0, transition: { duration: 1 } }}
-            >
-              <main>
-                <FrontPage
-                  letUserMint={letUserMint}
-                  setLetUserMint={setLetUserMint}
-                />
-                <About letUserMint={letUserMint} />
-                <ReadyVelocity />
-                <Gallery />
-                <Contact letUserMint={letUserMint} />
-              </main>
-            </motion.div>
+            <UmiProvider>
+              {/* <WalletMultiButton /> */}
+              {/* <WalletDisconnectButton /> */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 1 } }}
+                exit={{ opacity: 0, transition: { duration: 1 } }}
+              >
+                <main>
+                  <FrontPage
+                    letUserMint={letUserMint}
+                    setLetUserMint={setLetUserMint}
+                    signature={signature}
+                    setSignature={setSignature}
+                  />
+                  <About
+                    letUserMint={letUserMint}
+                    setSignature={setSignature}
+                  />
+                  <ReadyVelocity />
+                  <Gallery />
+                  <Contact
+                    letUserMint={letUserMint}
+                    setSignature={setSignature}
+                  />
+                </main>
+              </motion.div>
+            </UmiProvider>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

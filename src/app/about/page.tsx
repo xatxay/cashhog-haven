@@ -5,9 +5,13 @@ import Image from "next/image";
 import "../../styles/style.css";
 import { motion } from "framer-motion";
 import cardVariants from "./variant";
-import type { LetUserMintType } from "@/utils/interface";
+import type { AboutProps } from "@/utils/interface";
+import { handleMint } from "../connectWallet/handleMint";
+import { useUmi } from "../connectWallet/umiProvider";
 
-const About = ({ letUserMint }: LetUserMintType) => {
+const About = ({ letUserMint, setSignature }: AboutProps) => {
+  const umi = useUmi();
+  const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD"; //change
   return (
     <div
       style={{
@@ -47,6 +51,7 @@ const About = ({ letUserMint }: LetUserMintType) => {
             className=" box-border w-1/3 rounded-md bg-pink-300 p-3"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={() => handleMint(umi, candyMachineId, setSignature)}
           >
             Mint Now
           </motion.button>
