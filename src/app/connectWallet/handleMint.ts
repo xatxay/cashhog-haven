@@ -1,17 +1,18 @@
 import {
   mintV2,
   fetchCandyMachine,
+  fetchCandyGuard,
 } from "@metaplex-foundation/mpl-candy-machine";
 import {
   transactionBuilder,
   generateSigner,
   publicKey,
-  some,
   type Umi,
 } from "@metaplex-foundation/umi";
 import { setComputeUnitLimit } from "@metaplex-foundation/mpl-toolbox";
 import { toast } from "react-toastify";
 import type { Dispatch, SetStateAction } from "react";
+import getMintArgs from "./getMintArgs";
 
 export const handleMint = async (
   umi: Umi,
@@ -22,6 +23,13 @@ export const handleMint = async (
   const toastId = toast.loading("Minting...", { autoClose: toastDelay });
   const candyMachine = await fetchCandyMachine(umi, publicKey(candyMachineId));
   console.log("candy machine: ", candyMachine);
+  const candyGuards = await fetchCandyGuard(
+    umi,
+    publicKey(candyMachine.mintAuthority),
+  );
+  console.log("candy guards: ", candyGuards);
+  const mintArgs = getMintArgs(candyGuards);
+  console.log("mint argumrnt: ", mintArgs);
   const nftMint = generateSigner(umi);
   console.log("nftMint: ", nftMint);
   const transaction = transactionBuilder()
@@ -33,15 +41,7 @@ export const handleMint = async (
         collectionMint: candyMachine.collectionMint,
         collectionUpdateAuthority: candyMachine.authority,
         candyGuard: candyMachine.mintAuthority,
-        mintArgs: {
-          mintLimit: some({ id: 1, limit: 100 }),
-          solPayment: some({
-            value: 0.01,
-            destination: publicKey(
-              `5biNt1epi3bxsAedRucFkK27gmjFdMSQvmpJ2HEgcyRB`,
-            ),
-          }),
-        },
+        mintArgs: mintArgs,
       }),
     );
   let mintResponse;

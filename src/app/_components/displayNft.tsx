@@ -38,7 +38,7 @@ const DisplayNft = ({ metadata, closeDrawerHandle }: DisplayNftProps) => {
         </div>
         <div className="m-4 box-border h-full w-full flex-1 items-start justify-start p-4">
           <span className="block">CashHog just found a new home:</span>
-          <span className="block text-gray-700">
+          <span className="block text-gray-600">
             {metadata?.owner.slice(0, 8) +
               "......" +
               metadata?.owner.slice(

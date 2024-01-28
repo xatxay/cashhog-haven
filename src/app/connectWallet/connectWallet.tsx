@@ -14,8 +14,8 @@ const ConnectWallet = ({
   letUserMint,
   setLetUserMint,
 }: ConnectWalletProps) => {
-  const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD";
-  const candyGuardId = `GzaaBidWLppNpxH7XvtFoqQDtiZF3johzdrw8qdAbvpG`;
+  const candyMachineId = String(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
+  const candyGuardId = String(process.env.NEXT_PUBLIC_CANDY_GUARD_ID);
   const umi = useUmi();
   const wallet = useWallet();
 
@@ -35,7 +35,7 @@ const ConnectWallet = ({
       setLetUserMint(limit);
     };
     if (wallet.connected) void fetchMintLimit();
-  }, [candyGuardId, setLetUserMint, umi, wallet]);
+  }, [candyGuardId, candyMachineId, setLetUserMint, umi, wallet]);
 
   return !wallet.connected ? (
     <motion.button

@@ -11,7 +11,7 @@ import { useUmi } from "../connectWallet/umiProvider";
 
 const About = ({ letUserMint, setSignature }: AboutProps) => {
   const umi = useUmi();
-  const candyMachineId = "6W65xY38tkXZjXrEiPacVrCd4PF1qbT48pjAAXFXvUcD"; //change
+  const candyMachineId = String(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
   return (
     <div
       style={{

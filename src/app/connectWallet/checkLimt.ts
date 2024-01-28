@@ -6,6 +6,7 @@ import {
 import { type Umi, type Some, publicKey } from "@metaplex-foundation/umi";
 import { type WalletContextState } from "@solana/wallet-adapter-react";
 import { toast } from "react-toastify";
+import getMintArgs from "./getMintArgs";
 
 const checkMintLimt = async (
   candyGuardId: string,
