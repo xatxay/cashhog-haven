@@ -19,6 +19,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 
 const WholePage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false); //change true
+  const [letUserMint, setLetUserMint] = useState<boolean | null>(true);
   const network = WalletAdapterNetwork.Mainnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const walletsList = useMemo(
@@ -50,11 +51,14 @@ const WholePage = () => {
               exit={{ opacity: 0, transition: { duration: 1 } }}
             >
               <main>
-                <FrontPage />
-                <About />
+                <FrontPage
+                  letUserMint={letUserMint}
+                  setLetUserMint={setLetUserMint}
+                />
+                <About letUserMint={letUserMint} />
                 <ReadyVelocity />
                 <Gallery />
-                <Contact />
+                <Contact letUserMint={letUserMint} />
               </main>
             </motion.div>
           </WalletModalProvider>

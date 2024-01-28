@@ -5,8 +5,9 @@ import Image from "next/image";
 import "../../styles/style.css";
 import { motion } from "framer-motion";
 import cardVariants from "./variant";
+import type { LetUserMintType } from "@/utils/interface";
 
-const About = () => {
+const About = ({ letUserMint }: LetUserMintType) => {
   return (
     <div
       style={{
@@ -41,13 +42,24 @@ const About = () => {
         <span className="m-3 text-lg font-bold text-white">
           A collection of 6 unique cashhog haven.
         </span>
-        <motion.button
-          className=" box-border w-1/3 rounded-md bg-pink-300 p-3"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Mint Now
-        </motion.button>
+        {letUserMint ? (
+          <motion.button
+            className=" box-border w-1/3 rounded-md bg-pink-300 p-3"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Mint Now
+          </motion.button>
+        ) : (
+          <motion.button
+            disabled
+            className=" box-border w-1/3 rounded-md bg-pink-300 p-3"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Minted
+          </motion.button>
+        )}
         <div className="absolute bottom-10  w-52">
           <HogSleeping />
         </div>

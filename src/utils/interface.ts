@@ -1,9 +1,24 @@
 import type { WalletContextState } from "@solana/wallet-adapter-react";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 import type {
   RpcConfirmTransactionResult,
   Umi,
 } from "@metaplex-foundation/umi";
+
+export interface LetUserMintType {
+  letUserMint: boolean | null;
+}
+
+export interface UmiProviderProps {
+  children: ReactNode;
+}
+
+export interface FrontPageProps extends LetUserMintType {
+  setLetUserMint: React.Dispatch<React.SetStateAction<boolean | null>>;
+  // umi: Umi;
+  // signature: Uint8Array | null;
+  // setSignature: Dispatch<SetStateAction<Uint8Array | null>>;
+}
 
 export interface DrawerProps {
   closeDrawerHandle: () => void;
@@ -23,23 +38,19 @@ export interface MetadataType {
   owner: string;
 }
 
-// interface SetMetaData {
-//   setMetadata: Dispatch<SetStateAction<MetadataType>>;
-//   setSignature: Dispatch<SetStateAction<Uint8Array | undefined>>;
-// }
-
-export interface NavBarProps {
+export interface NavBarProps extends LetUserMintType {
   setSignature: Dispatch<SetStateAction<Uint8Array | null>>;
-  // openDrawerHandle: () => void;
   umi: Umi;
+  setLetUserMint: React.Dispatch<React.SetStateAction<boolean | null>>;
 }
 
-export interface ConnectWalletProps {
+export interface ConnectWalletProps extends LetUserMintType {
   setSignature: Dispatch<SetStateAction<Uint8Array | null>>;
   wallet: WalletContextState;
   setVisible: (open: boolean) => void;
   onButtonClick: (() => void) | undefined;
   umi: Umi;
+  setLetUserMint: React.Dispatch<React.SetStateAction<boolean | null>>;
 }
 
 export interface CountDownProps {
@@ -56,8 +67,3 @@ export interface DisplayNftProps {
   metadata: MetadataType;
   closeDrawerHandle: () => void;
 }
-
-// export interface getMintReturn {
-//   mintAddress: string;
-//   walletAddress: string;
-// }

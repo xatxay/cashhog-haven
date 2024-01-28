@@ -10,8 +10,9 @@ import { useCallback, useEffect, useState } from "react";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import { mplTokenMetadata } from "@metaplex-foundation/mpl-token-metadata";
 import { mplCandyMachine } from "@metaplex-foundation/mpl-candy-machine";
+import type { FrontPageProps } from "@/utils/interface";
 
-const FrontPage = () => {
+const FrontPage = ({ letUserMint, setLetUserMint }: FrontPageProps) => {
   const endpoint = "https://api.devnet.solana.com";
   const [openDrawer, setOpenDrawer] = useState(false);
   const [signature, setSignature] = useState<Uint8Array | null>(null);
@@ -19,6 +20,10 @@ const FrontPage = () => {
   const umi = createUmi(endpoint)
     .use(mplTokenMetadata())
     .use(mplCandyMachine());
+
+  useEffect(() => {
+    console.log("testing umi: ", umi);
+  }, [umi]);
 
   const openDrawerHandle = useCallback(() => {
     if (openDrawer) return;
@@ -52,7 +57,12 @@ const FrontPage = () => {
         }}
         className="background flex h-screen w-full flex-col bg-gray-500"
       >
-        <NavBar setSignature={setSignature} umi={umi} />
+        <NavBar
+          setSignature={setSignature}
+          umi={umi}
+          letUserMint={letUserMint}
+          setLetUserMint={setLetUserMint}
+        />
         <div className="flex h-full w-full flex-row items-center justify-center ">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
             <div className="w-4/5 text-8xl">

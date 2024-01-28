@@ -5,11 +5,7 @@ import { useEffect, useState } from "react";
 import DisplayNft from "./displayNft";
 import useGetMetadata from "../hooks/getMetadata";
 
-const NftDrawer = ({
-  closeDrawerHandle,
-  signature,
-  umi,
-}: DrawerProps) => {
+const NftDrawer = ({ closeDrawerHandle, signature, umi }: DrawerProps) => {
   const [countDownFinished, setCountDownFinished] = useState<boolean>(false);
 
   const handleCountDown = () => {

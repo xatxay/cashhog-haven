@@ -5,11 +5,20 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { useWalletDisconnectButton } from "@solana/wallet-adapter-base-ui";
 import { type NavBarProps } from "@/utils/interface";
+import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
 
-const NavBar = ({ setSignature, umi }: NavBarProps) => {
+const NavBar = ({
+  setSignature,
+  umi,
+  letUserMint,
+  setLetUserMint,
+}: NavBarProps) => {
   const wallet = useWallet();
   const { setVisible } = useWalletModal();
   const { onButtonClick } = useWalletDisconnectButton();
+  if (wallet) {
+    umi.use(walletAdapterIdentity(wallet));
+  }
   return (
     <nav className="absolute m-auto flex w-full items-center justify-between py-4">
       <div className="flex flex-1 items-center justify-center">
@@ -33,6 +42,8 @@ const NavBar = ({ setSignature, umi }: NavBarProps) => {
           onButtonClick={onButtonClick}
           setSignature={setSignature}
           umi={umi}
+          letUserMint={letUserMint}
+          setLetUserMint={setLetUserMint}
         />
       </div>
     </nav>

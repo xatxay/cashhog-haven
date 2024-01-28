@@ -7,8 +7,10 @@ import {
   FaDiscord,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import type { LetUserMintType } from "@/utils/interface";
+import { handleMint } from "../connectWallet/handleMint";
 
-const Contact = () => {
+const Contact = ({ letUserMint }: LetUserMintType) => {
   return (
     <div
       // style={{
@@ -33,13 +35,24 @@ const Contact = () => {
               <span className="text-lg text-gray-700">
                 Inspire, Participate, and Create With Your Fellow Cashhogs.
               </span>
-              <motion.button
-                className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Mint
-              </motion.button>
+              {letUserMint ? (
+                <motion.button
+                  className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Mint
+                </motion.button>
+              ) : (
+                <motion.button
+                  disabled
+                  className="m-3 box-border w-4/5 rounded-2xl bg-pink-300 p-4"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Minted
+                </motion.button>
+              )}
             </div>
           </div>
         </div>

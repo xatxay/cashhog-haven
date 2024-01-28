@@ -75,8 +75,8 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
       const viewportWidth = window.innerWidth;
       const newRepetitions = Math.ceil(viewportWidth / textWidth);
       setRepetitions(newRepetitions);
-      console.log("text element: ", textElement);
-      console.log("text width: ", textWidth);
+      // console.log("text element: ", textElement);
+      // console.log("text width: ", textWidth);
     };
     measureTExt();
     window.addEventListener("resize", measureTExt);
