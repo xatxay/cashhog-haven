@@ -20,7 +20,7 @@ export const useUmi = () => {
 };
 
 export const UmiProvider = ({ children }: UmiProviderProps) => {
-  const endpoint = "https://api.devnet.solana.com";
+  const endpoint = String(process.env.NEXT_PUBLIC_ENDPOINT_RPC);
   const wallet = useWallet();
   const umi = createUmi(endpoint)
     .use(mplTokenMetadata())
