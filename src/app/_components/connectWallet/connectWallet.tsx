@@ -41,36 +41,38 @@ const ConnectWallet = ({
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="box-border rounded border-none bg-pink-300 p-4 text-base"
+      className="box-border rounded border-none bg-pink-300 p-1 text-xs lg:p-4 lg:text-base"
       onClick={onRequestConnectWallet}
     >
       Connect To Mint
     </motion.button>
   ) : (
-    <div className="flex w-full items-center justify-center gap-7">
+    <div className="flex w-full items-center justify-center gap-2 lg:gap-7">
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={onButtonClick}
         data-tooltip-target="tooltip-default"
-        className="has-tooltip relative box-border flex items-center justify-center gap-2 rounded border-none bg-pink-300 p-4 text-base"
+        className="has-tooltip relative box-border flex items-center justify-center rounded border-none bg-pink-300 p-2 text-xs lg:gap-2 lg:p-4 lg:text-base"
       >
         <span className="tooltip">{wallet.publicKey?.toBase58()}</span>
         <span>Disconnect</span>
-        <Image
-          src={wallet.wallet?.adapter.icon ?? ""}
-          alt="icon"
-          width={20}
-          height={20}
-          quality={100}
-        />
+        <div className="hidden lg:block">
+          <Image
+            src={wallet.wallet?.adapter.icon ?? ""}
+            alt="icon"
+            width={20}
+            height={20}
+            quality={100}
+          />
+        </div>
       </motion.button>
       {letUserMint ? (
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => handleMint(umi, candyMachineId, setSignature)}
-          className="box-border rounded border-none bg-pink-300 p-4 text-base"
+          className="box-border rounded border-none bg-pink-300 p-2 text-xs lg:p-4 lg:text-base"
         >
           Mint
         </motion.button>
@@ -80,7 +82,7 @@ const ConnectWallet = ({
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => handleMint(umi, candyMachineId, setSignature)}
-          className="box-border rounded border-none bg-pink-300 p-4 text-base"
+          className="box-border rounded border-none bg-pink-300 p-2 text-xs lg:p-4 lg:text-base"
         >
           Minted
         </motion.button>

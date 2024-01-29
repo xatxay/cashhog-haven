@@ -62,10 +62,10 @@ const FrontPage = ({
         />
         <div className="flex h-full w-full flex-row items-center justify-center ">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
-            <div className="w-4/5 text-8xl">
+            <div className="w-4/5 text-2xl lg:text-8xl">
               Bank on <span className="text-pink-400">Us</span>, Not on Runs
             </div>
-            <div className=" absolute bottom-0 right-0 w-72">
+            <div className="absolute bottom-0 right-0 w-48 lg:w-72">
               <PigButterfly />
             </div>
           </div>
@@ -78,7 +78,7 @@ const FrontPage = ({
                   width={300}
                   height={300}
                   alt="Welcome page pic"
-                  className="rounded-3xl border-2 border-black"
+                  className="w-36 rounded-3xl border-2 border-black md:w-64 lg:w-80"
                   quality={100}
                 />
               </div>
@@ -91,7 +91,6 @@ const FrontPage = ({
                 <NftDrawer
                   closeDrawerHandle={closeDrawerHandle}
                   signature={signature}
-                  // umi={umi}
                   key="nft drawer"
                 />
               ) : null}

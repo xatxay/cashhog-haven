@@ -60,7 +60,7 @@ const StackImages = ({ pictures }: { pictures: string[] }) => {
                   alt={`img-${index}`}
                   width={425}
                   height={425}
-                  className="pointer-events-none rounded-3xl"
+                  className="pointer-events-none h-auto w-60 rounded-3xl lg:w-96"
                   quality={100}
                 />
               </motion.div>

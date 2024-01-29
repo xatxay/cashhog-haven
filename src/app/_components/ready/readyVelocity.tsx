@@ -109,7 +109,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   //   );
   return (
     <div className="parallax">
-      <motion.div className="scroller" style={{ x }}>
+      <motion.div className="scroller text-5xl lg:text-7xl" style={{ x }}>
         {Array.from({ length: repetitions }, (_, i) => (
           <span key={i}>{children}</span>
         ))}

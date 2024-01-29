@@ -14,13 +14,10 @@ const ImageSlider = ({ pictures }: { pictures: string[] }) => {
   }, []);
 
   return (
-    <div className="flex h-full w-full items-center justify-start">
-      <motion.div
-        className=" overflow-x-hidden bg-red-600"
-        ref={ref}
-      >
+    <div className="flex h-full w-4/5 items-center justify-start">
+      <motion.div className=" overflow-x-hidden" ref={ref}>
         <motion.div
-          className="flex min-w-max cursor-grab gap-11 bg-blue-600"
+          className="flex min-w-max cursor-grab gap-11"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           whileTap={{ cursor: "grabbing" }}
@@ -30,8 +27,8 @@ const ImageSlider = ({ pictures }: { pictures: string[] }) => {
               <Image
                 src={pic}
                 alt={`${pic}-${index}`}
-                width={425}
-                height={425}
+                width={200}
+                height={200}
                 className="pointer-events-none"
               />
             </motion.div>
