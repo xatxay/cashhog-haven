@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Montserrat_Alternates } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
+import { Analytics } from "@vercel/analytics/react";
 //Montserrat Alternates
 
 const inter = Montserrat_Alternates({
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
+        <Analytics />
       </body>
     </html>
   );
