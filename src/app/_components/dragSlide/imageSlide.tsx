@@ -8,7 +8,7 @@ const ImageSlider = ({ pictures }: { pictures: string[] }) => {
 
   useEffect(() => {
     if (ref.current) {
-      console.log(ref.current.scrollWidth, ref.current.offsetWidth);
+      // console.log(ref.current.scrollWidth, ref.current.offsetWidth);
       setWidth(ref.current.scrollWidth - ref.current.offsetWidth);
     }
   }, []);

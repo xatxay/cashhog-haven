@@ -1,7 +1,7 @@
 import type { DrawerProps } from "@/utils/interface";
 import { motion } from "framer-motion";
 import CountDown from "./countDown";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DisplayNft from "./displayNft";
 import useGetMetadata from "../hooks/getMetadata";
 import { useUmi } from "./connectWallet/umiProvider";
@@ -15,10 +15,6 @@ const NftDrawer = ({ closeDrawerHandle, signature }: DrawerProps) => {
   };
 
   const metadata = useGetMetadata(signature, umi);
-
-  useEffect(() => {
-    console.log("got metadata: ", metadata);
-  }, [metadata]);
 
   const drawerVariants = {
     hidden: { y: "100%" },

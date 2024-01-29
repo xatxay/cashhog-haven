@@ -20,7 +20,7 @@ const StackImages = ({ pictures }: { pictures: string[] }) => {
       controls
         .start((i) => {
           const offset = (i - 1.15) * 430;
-          console.log("offset: ", i, offset);
+          // console.log("offset: ", i, offset);
           return {
             x: offset,
             // x: 475 * i,
@@ -28,7 +28,7 @@ const StackImages = ({ pictures }: { pictures: string[] }) => {
           };
         })
         .catch((err) => console.log(err));
-      console.log(dragRef.current.scrollWidth, dragRef.current.offsetWidth);
+      // console.log(dragRef.current.scrollWidth, dragRef.current.offsetWidth);
       setWidth(dragRef.current.scrollWidth - dragRef.current.offsetWidth);
     }
   }, [controls, isInView]);

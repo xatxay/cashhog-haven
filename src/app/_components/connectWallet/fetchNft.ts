@@ -21,7 +21,7 @@ const fetchUserNft = async (
     const metadata = await fetchJsonMetadata(umi, nft.metadata.uri);
     return metadata;
   } catch (err) {
-    console.log("Error getting user nft: ", err);
+    console.error("Error getting user nft: ", err);
     throw err;
   }
 };

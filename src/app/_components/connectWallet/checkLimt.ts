@@ -15,7 +15,7 @@ const checkMintLimt = async (
 ): Promise<boolean | null> => {
   try {
     if (!wallet.connected) return null;
-    console.log("check umi: ", umi);
+    // console.log("check umi: ", umi);
     if (!umi.identity.publicKey) {
       toast.warn("Connect Wallet to Mint!", { autoClose: 3000 });
       return null;
@@ -29,10 +29,10 @@ const checkMintLimt = async (
       candyGuard: candyGuard.publicKey,
     });
     if (mintCounter) {
-      console.log("has mint counter: ", mintCounter);
+      // console.log("has mint counter: ", mintCounter);
       return mintLimit.value.limit - mintCounter.count > 0 ? true : false;
     } else {
-      console.log("no mint counter: ", mintCounter);
+      // console.log("no mint counter: ", mintCounter);
       return true;
     }
   } catch (err) {

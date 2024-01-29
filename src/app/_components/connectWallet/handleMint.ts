@@ -22,16 +22,16 @@ export const handleMint = async (
   const toastDelay = 3000;
   const toastId = toast.loading("Minting...", { autoClose: toastDelay });
   const candyMachine = await fetchCandyMachine(umi, publicKey(candyMachineId));
-  console.log("candy machine: ", candyMachine);
+  // console.log("candy machine: ", candyMachine);
   const candyGuards = await fetchCandyGuard(
     umi,
     publicKey(candyMachine.mintAuthority),
   );
-  console.log("candy guards: ", candyGuards);
+  // console.log("candy guards: ", candyGuards);
   const mintArgs = getMintArgs(candyGuards);
-  console.log("mint argumrnt: ", mintArgs);
+  // console.log("mint argumrnt: ", mintArgs);
   const nftMint = generateSigner(umi);
-  console.log("nftMint: ", nftMint);
+  // console.log("nftMint: ", nftMint);
   const transaction = transactionBuilder()
     .add(setComputeUnitLimit(umi, { units: 800000 }))
     .add(
@@ -80,7 +80,7 @@ export const handleMint = async (
     });
     console.error("Error minting...: ", mintResponse);
   }
-  console.log("handle sig: ", mintResponse.signature);
+  // console.log("handle sig: ", mintResponse.signature);
   setSignature(Uint8Array.from(mintResponse.signature));
-  console.log("got signature");
+  // console.log("got signature");
 };

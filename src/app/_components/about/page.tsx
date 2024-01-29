@@ -71,7 +71,13 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
       <div className="flex h-full w-full flex-1 flex-col items-center justify-center">
         <div className="h-full w-full flex-1">
           <div className="flex h-full w-full items-center justify-center">
-            <div className="relative h-full w-4/5 rounded-3xl lg:flex lg:h-4/5 lg:items-center lg:justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative h-full w-4/5 rounded-3xl lg:flex lg:h-4/5 lg:items-center lg:justify-center"
+            >
               <Image
                 src="/cashhog_haven_banner.png"
                 alt="cashhog banner"
@@ -80,18 +86,19 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
                 quality={100}
                 className="z-20 rounded-3xl border-2 border-black object-cover"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="relative h-full w-full flex-1 items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className=" absolute flex h-full w-full flex-row items-center justify-center gap-5">
-              <div className="flex h-5/6 w-[39%] items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-bl from-green-400  via-blue-400 to-purple-500">
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex h-5/6 w-[39%] items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-bl from-green-400  via-blue-400 to-purple-500"
+              >
                 <div className="box-border flex h-full flex-col items-center justify-center gap-3 text-center lg:m-3 lg:items-start lg:justify-start lg:p-7 lg:text-start">
                   <span className="text-xs lg:text-base">Solana Network</span>
                   <span className="text-base font-bold text-white lg:text-3xl">
@@ -101,9 +108,15 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
                     Visit Marketplace
                   </span>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="relative flex h-5/6 w-[39%] items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-br  from-green-200 via-green-300 to-green-500">
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative flex h-5/6 w-[39%] items-center justify-center rounded-3xl border-2 border-black bg-gradient-to-br  from-green-200 via-green-300 to-green-500"
+              >
                 <div className="box-border flex h-full flex-col items-center justify-center gap-3 text-center lg:m-3 lg:items-start lg:justify-start lg:p-7 lg:text-start">
                   <span className="text-xs lg:text-base">
                     Stake and earn reward
@@ -118,9 +131,9 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
                 <div className="absolute bottom-0 right-0 hidden w-36 lg:block">
                   <PigCoins />
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

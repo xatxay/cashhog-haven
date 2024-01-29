@@ -9,18 +9,18 @@ const useGetMetadata = (signature: Uint8Array, umi: Umi) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("getting mint address");
+        // console.log("getting mint address");
         const mintAddress = await getMintAddress(
           Uint8Array.from(signature),
           umi,
         );
-        console.log("mint adress: ", mintAddress);
+        // console.log("mint adress: ", mintAddress);
         if (!mintAddress) {
           console.error("Mint address is null: ", mintAddress);
           return;
         }
         const nftMetadata = await fetchUserNft(umi, mintAddress.mintAddress);
-        console.log("usenftmeta: ", nftMetadata);
+        // console.log("usenftmeta: ", nftMetadata);
         if (!nftMetadata) {
           console.error("No metadata found: ", nftMetadata);
           return;
@@ -28,7 +28,7 @@ const useGetMetadata = (signature: Uint8Array, umi: Umi) => {
         const image = nftMetadata.animation_url
           ? nftMetadata.animation_url
           : nftMetadata.image;
-        console.log("metadata: ", nftMetadata);
+        // console.log("metadata: ", nftMetadata);
         setNftData({
           name: nftMetadata.name ?? "No name found",
           image:

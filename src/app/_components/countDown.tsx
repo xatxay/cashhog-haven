@@ -8,7 +8,7 @@ const CountDown = ({ handleCountDown, metadata }: CountDownProps) => {
   const [countDownComplete, setCountDownComplete] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log("rerender");
+    // console.log("rerender");
     const animation = animate(count, 100, {
       duration: 13,
       onComplete: () => {

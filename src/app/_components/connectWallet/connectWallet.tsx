@@ -21,7 +21,7 @@ const ConnectWallet = ({
 
   const onRequestConnectWallet = () => {
     setVisible(true);
-    console.log("asdasdasd");
+    // console.log("asdasdasd");
   };
 
   useEffect(() => {

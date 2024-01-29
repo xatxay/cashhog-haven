@@ -10,10 +10,13 @@ import { motion } from "framer-motion";
 import type { ContactProps } from "@/utils/interface";
 import { handleMint } from "../connectWallet/handleMint";
 import { useUmi } from "../connectWallet/umiProvider";
+import { iconContainer, iconItem } from "./variants";
 
 const Contact = ({ letUserMint, setSignature }: ContactProps) => {
   const umi = useUmi();
   const candyMachineId = String(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
+
+  // const SocialMedia = [FaTwitterSquare, FaYoutube, FaInstagram, FaDiscord];
   return (
     <div
       // style={{
@@ -82,12 +85,35 @@ const Contact = ({ letUserMint, setSignature }: ContactProps) => {
               <span className="m-2 p-6 text-xl font-extrabold md:text-2xl lg:text-3xl">
                 Follow Us
               </span>
-              <div className="flex w-full flex-row items-center justify-between">
-                <FaTwitterSquare className="h-auto w-9 md:w-12 lg:w-16" />
-                <FaYoutube className="h-auto w-9 md:w-12 lg:w-16" />
-                <FaInstagram className="h-auto w-9 md:w-12 lg:w-16" />
-                <FaDiscord className="h-auto w-9 md:w-12 lg:w-16" />
-              </div>
+              <motion.div
+                className="flex w-full flex-row items-center justify-between"
+                variants={iconContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <motion.div variants={iconItem}>
+                  <FaTwitterSquare className="h-auto w-9 md:w-12 lg:w-16" />
+                </motion.div>
+                <motion.div variants={iconItem}>
+                  <FaYoutube className="h-auto w-9 md:w-12 lg:w-16" />
+                </motion.div>
+                <motion.div variants={iconItem}>
+                  <FaInstagram className="h-auto w-9 md:w-12 lg:w-16" />
+                </motion.div>
+                <motion.div variants={iconItem}>
+                  <FaDiscord className="h-auto w-9 md:w-12 lg:w-16" />
+                </motion.div>
+                {/* {SocialMedia.map((Icon, index) => (
+                  <motion.div
+                    key={index}
+                    className="h-auto w-9 md:w-12 lg:w-16"
+                    variants={item}
+                  >
+                    <Icon />
+                  </motion.div>
+                ))} */}
+              </motion.div>
             </div>
           </div>
         </div>

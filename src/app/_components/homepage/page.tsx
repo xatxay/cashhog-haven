@@ -23,8 +23,8 @@ const FrontPage = ({
   }, [openDrawer]);
 
   useEffect(() => {
-    console.log("open drawer: ", openDrawer);
-    console.log("useeffect signature: ", signature);
+    // console.log("open drawer: ", openDrawer);
+    // console.log("useeffect signature: ", signature);
     openDrawerHandle();
   }, [openDrawer, openDrawerHandle, signature]);
 

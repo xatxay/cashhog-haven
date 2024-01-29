@@ -13,7 +13,7 @@ const getMintAddress = async (
   try {
     let transaction;
     for (let i = 0; i < 30; i++) {
-      console.log('trying: ', i)
+      console.log("trying: ", i);
       transaction = await umi.rpc.getTransaction(Uint8Array.from(signature));
       if (transaction) {
         break;
@@ -21,10 +21,10 @@ const getMintAddress = async (
         await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     }
-    console.log("umi: ", umi);
-    console.log("signaturemi: ", signature);
-    console.log("get mint address: ", transaction);
-    console.log("getasdasd: ", transaction?.message.accounts[1]);
+    // console.log("umi: ", umi);
+    // console.log("signaturemi: ", signature);
+    // console.log("get mint address: ", transaction);
+    // console.log("getasdasd: ", transaction?.message.accounts[1]);
     if (transaction?.meta.err) {
       console.log("No transaction found: ", transaction);
       toast.error("No transaction found :(", { autoClose: 3000 });
