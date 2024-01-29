@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import NftDrawer from "../drawer";
 import { useCallback, useEffect, useState } from "react";
 import type { FrontPageProps } from "@/utils/interface";
-import { useUmi } from "../connectWallet/umiProvider";
 
 const FrontPage = ({
   letUserMint,
@@ -17,11 +16,6 @@ const FrontPage = ({
   setSignature,
 }: FrontPageProps) => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const umi = useUmi();
-
-  useEffect(() => {
-    console.log("testing umi: ", umi);
-  }, [umi]);
 
   const openDrawerHandle = useCallback(() => {
     if (openDrawer) return;
@@ -62,7 +56,7 @@ const FrontPage = ({
         />
         <div className="flex h-full w-full flex-row items-center justify-center ">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
-            <div className="w-4/5 text-3xl md:text-6xl lg:text-8xl">
+            <div className="w-4/5 text-3xl md:text-7xl lg:text-8xl">
               Bank on <span className="text-pink-400">Us</span>, Not on Runs
             </div>
             <div className="absolute bottom-0 right-0 w-48 md:w-56 lg:w-72">

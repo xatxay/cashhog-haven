@@ -20,7 +20,7 @@ const NavBar = ({ setSignature, letUserMint, setLetUserMint }: NavBarProps) => {
         />
       </div>
       <div className="flex flex-1 items-center justify-center">
-        <h3 className="text-border text-center text-lg font-extrabold text-black md:text-start md:text-3xl lg:text-5xl">
+        <h3 className="text-border text-center text-lg font-extrabold text-black md:text-start md:text-4xl lg:text-5xl">
           Cashhog Haven
         </h3>
       </div>

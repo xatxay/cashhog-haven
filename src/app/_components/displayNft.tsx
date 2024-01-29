@@ -5,7 +5,7 @@ import TypewriterEffect from "./typewrite";
 const DisplayNft = ({ metadata, closeDrawerHandle }: DisplayNftProps) => {
   return (
     <>
-      <div className=" flex h-full flex-1 items-center justify-center rounded-t-[10px]">
+      <div className="z-50 flex h-full flex-1 items-center justify-center rounded-t-[10px]">
         <Image
           src={metadata?.image ?? ""}
           priority
