@@ -41,7 +41,7 @@ const ConnectWallet = ({
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="box-border rounded border-none bg-pink-300 p-1 text-xs lg:p-4 lg:text-base"
+      className="box-border rounded border-none bg-pink-300 p-2 text-xs md:p-3 lg:p-4 lg:text-base"
       onClick={onRequestConnectWallet}
     >
       Connect To Mint

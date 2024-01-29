@@ -20,7 +20,7 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
       }}
       className="flex h-screen w-full flex-col border-t-2 border-t-black bg-gradient-to-bl from-green-200 via-blue-300 to-pink-300  lg:flex-row"
     >
-      <div className="relative flex h-full w-full flex-1 flex-col items-center justify-center gap-2 space-x-2">
+      <div className="relative box-border flex h-full w-full flex-1 flex-col items-center justify-center gap-5 lg:gap-2">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -35,19 +35,19 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
               restDelta: 0.001,
             },
           }}
-          className="text-border top-0 text-2xl font-bold text-black lg:m-7 lg:text-7xl"
+          className="text-border top-0 text-2xl font-bold text-black md:text-4xl lg:m-7 lg:text-5xl xl:text-7xl"
         >
           Cashhog Haven
         </motion.span>
-        <span className="text-center text-base font-bold text-white lg:text-lg">
+        <span className="text-center text-base font-bold text-white md:text-lg lg:text-xl">
           Enter a new universe of connected hogs community.
         </span>
-        <span className="text-base font-bold text-white lg:m-3 lg:text-lg">
+        <span className="text-base font-bold text-white md:text-lg lg:m-3 lg:text-xl">
           A collection of 6 unique cashhog haven.
         </span>
         {letUserMint ? (
           <motion.button
-            className=" box-border w-1/3 rounded-md bg-pink-300 p-1 text-sm lg:p-3 lg:text-lg"
+            className=" box-border w-1/3 rounded-md bg-pink-300 p-1 text-sm md:p-2 lg:p-3 lg:text-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleMint(umi, candyMachineId, setSignature)}
@@ -57,7 +57,7 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
         ) : (
           <motion.button
             disabled
-            className=" box-border w-1/3 rounded-md bg-pink-300 p-3"
+            className=" box-border w-1/3 rounded-md bg-pink-300 p-1 text-sm md:p-2 lg:p-3 lg:text-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -71,7 +71,7 @@ const AboutPage = ({ letUserMint, setSignature }: AboutPageProps) => {
       <div className="flex h-full w-full flex-1 flex-col items-center justify-center">
         <div className="h-full w-full flex-1">
           <div className="flex h-full w-full items-center justify-center">
-            <div className="relative h-4/5 w-4/5 rounded-3xl lg:flex lg:items-center lg:justify-center">
+            <div className="relative h-full w-4/5 rounded-3xl lg:flex lg:h-4/5 lg:items-center lg:justify-center">
               <Image
                 src="/cashhog_haven_banner.png"
                 alt="cashhog banner"

@@ -62,10 +62,10 @@ const FrontPage = ({
         />
         <div className="flex h-full w-full flex-row items-center justify-center ">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center">
-            <div className="w-4/5 text-2xl lg:text-8xl">
+            <div className="w-4/5 text-3xl md:text-6xl lg:text-8xl">
               Bank on <span className="text-pink-400">Us</span>, Not on Runs
             </div>
-            <div className="absolute bottom-0 right-0 w-48 lg:w-72">
+            <div className="absolute bottom-0 right-0 w-48 md:w-56 lg:w-72">
               <PigButterfly />
             </div>
           </div>

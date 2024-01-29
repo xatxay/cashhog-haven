@@ -33,14 +33,14 @@ const Gallery = () => {
       ) : isMediumScreenSize ? (
         <ImageSlider pictures={pictures} />
       ) : (
-        <div className="flex h-full w-full flex-row flex-wrap items-center justify-center gap-4">
+        <div className="m-2 flex h-full w-full flex-row flex-wrap items-center justify-between">
           {pictures.map((pic) => {
             return (
               <Image
                 src={pic}
                 key={pic}
-                width={150}
-                height={150}
+                width={180}
+                height={180}
                 alt="gallery pictures"
               />
             );

@@ -5,7 +5,7 @@ const useGetMediumScreen = () => {
 
   useEffect(() => {
     const checkSize = () => {
-      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
+      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth <= 1024);
     };
 
     checkSize();
