@@ -19,7 +19,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { UmiProvider } from "../connectWallet/umiProvider";
 
 const WholePage = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false); //change true
+  const [isLoading, setIsLoading] = useState<boolean>(true); //change true
   const [letUserMint, setLetUserMint] = useState<boolean | null>(true);
   const [signature, setSignature] = useState<Uint8Array | null>(null);
   const network = WalletAdapterNetwork.Mainnet;
