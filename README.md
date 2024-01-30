@@ -6,7 +6,7 @@ There are 6 unique pfp art that are available to mint
 
 You can check out the website [here](https://cashhoghaven.vercel.app/)
 
-[![CashHog Haven Minting Experience](https://img.youtube.com/vi/ZymztcRk8mI/0.jpg)](https://www.youtube.com/watch?v=ZymztcRk8mI)
+[CashHog Haven Minting Experience](https://www.youtube.com/watch?v=ZymztcRk8mI)
 
 <img width="1510" alt="Screenshot 2024-01-30 at 10 27 58 AM" src="https://github.com/xatxay/cashhog-haven/assets/29783278/63dbe8e5-5637-4c0d-90ba-39692c840f84">
 
