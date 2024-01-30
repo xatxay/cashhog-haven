@@ -6,6 +6,8 @@ There are 6 unique pfp art that are available to mint
 
 You can check out the website [here](https://cashhoghaven.vercel.app/)
 
+[![CashHog Haven Minting Experience](https://www.youtube.com/watch?v=ZymztcRk8mI)
+
 ## How to Buy?
 
 Price: 0.01 SOL
